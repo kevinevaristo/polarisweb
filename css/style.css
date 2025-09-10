@@ -1889,6 +1889,24 @@
         padding: 0;
       }
       .shuffle-item .project-img-container {
+        width: 320px;
+        height: 213px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to bottom, #dcdcdc, #f8f8f8); /* gradient like your sample */
+        overflow: hidden;
+        margin: auto;
+        border: 1px solid #e0e0e0; /* optional subtle border */
+      }
+
+      .shuffle-item .project-img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .shuffle-item .project-img-container {
         position: relative;
         overflow: hidden;
       }
