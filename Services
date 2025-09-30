@@ -134,7 +134,7 @@
                     <ul class="nav navbar-nav mr-auto">
                       
                       <li class="nav-item"><a class="nav-link" href="index updated sept.html">Home</a></li>
-                      <li class="nav-item"><a class="nav-link" href="about_v2">About Us</a></li>
+                      <li class="nav-item"><a class="nav-link" href="about_v2.html">About Us</a></li>
                       <li class="nav-item"><a class="nav-link" href="ProductsServices.html">Products & Services</a></li>           
                       <li class="nav-item"><a class="nav-link" href="Careers.html">Careers</a></li>
 					             <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
@@ -190,17 +190,12 @@
     </div>
     <!--/ Title row end -->
 
-   <div class="row">
+    <div class="row">
   <div class="col-12">
     <div class="shuffle-btn-group">
-      <label class="active" for="all">
-        <input type="radio" name="shuffle-filter" id="all" value="all" checked="checked">Products
-      </label>
-      <label for="services">
-        <input type="radio" name="shuffle-filter" id="services" value="services">Services
-      </label>
-    </div><!-- project filter end -->
-
+      <label class="tab-btn active" data-target="products">PRODUCTS</label>
+      <label class="tab-btn" data-target="services">SERVICES</label>
+    </div>
 
         <div class="row shuffle-wrapper">
           <div class="col-1 shuffle-sizer"></div>
@@ -696,7 +691,8 @@
               </div>
             </div>
           </div><!-- shuffle item 33 end -->
-        </div><!-- shuffle end -->
+        </div><!-- shuffle end -->      
+        </div>
       </div>
 
       <div class="col-12">
@@ -1145,6 +1141,22 @@
 
   <!-- Template custom -->
   <script src="js/script.js"></script>
+  <script>
+  const tabs = document.querySelectorAll(".tab-btn");
+  const contents = document.querySelectorAll(".tab-content");
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      // remove active from all
+      tabs.forEach(t => t.classList.remove("active"));
+      contents.forEach(c => c.classList.remove("active"));
+
+      // add active to clicked
+      tab.classList.add("active");
+      document.getElementById(tab.dataset.target).classList.add("active");
+    });
+  });
+</script>
 
   </div><!-- Body inner end -->
   </body>
